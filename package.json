@@ -1,0 +1,22 @@
+{
+  "name": "ohmyfood",
+  "version": "1.0.0",
+  "description": "Projet 3 OCR",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crlynh/ohmyfood.git"
+  },
+  "author": "Caroline Som",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/crlynh/ohmyfood/issues"
+  },
+  "homepage": "https://github.com/crlynh/ohmyfood#readme",
+  "devDependencies": {
+    "sass": "^1.49.9"
+  }
+}
