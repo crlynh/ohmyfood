@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+$color-primary: #9356DC;
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
+
+
+@mixin shadow {
+    box-shadow: 0 0 10px #b6b5b5;
+}
+
+@mixin button {
+    border: 0;
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 100px;
+    padding: 15px;
+    color: white;
+    background-color: #b6b5b5;
+    background-image: linear-gradient($color-secondary, $color-primary);
+    cursor: pointer;
+    transition-duration: 0.25s;
+    @include shadow;
+  
+    &:hover {
+      box-shadow: 0rem 0rem 10px #494949;
+    }
+  }
+
+  @mixin transform_scale {
+    cursor: pointer;
+    transform: scale(1.08);
+  }
+
+  @mixin step {
+    padding: 20px;
+    height: 70px;
+    border-radius: 20px;
+    width: 400px;
+    @include shadow;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+      &::before {
+          content: counter(steps);
+          counter-increment: steps;
+          color: white;
+          background-color: $color-primary;
+          border-radius: 50%;
+          width: 25px;
+          height: 25px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-left: -33px;
+      }
+  }
+
+  @mixin new {
+    background-color: #99E2D0;
+    color: #3B8765;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 2px;
+    position: absolute;
+  }
+
+  @mixin footer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;   
+  }
+

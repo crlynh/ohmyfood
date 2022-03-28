@@ -1,3 +1,4 @@
 {
-    "liveServer.settings.multiRootWorkspaceName": "OHMYFOOD!"
+    "liveServer.settings.multiRootWorkspaceName": "OHMYFOOD!",
+    "livePreview.defaultPreviewPath": "/index.html"
 }
