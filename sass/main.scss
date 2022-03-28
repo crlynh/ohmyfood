@@ -53,7 +53,7 @@
 
 .functioning {
     counter-reset: steps;
-    padding: 50px;
+    padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -82,24 +82,42 @@
                     color: #7E7E7E;
                 }
         }
+
+    @media screen and (max-width:1059px) {
+        &_steps {
+            flex-wrap: wrap;
+            gap: 35px;
+        }
+        &_step {
+            width: 300px;
+        }
+            }
+
+    @media screen and (max-width: 767px) {
+        &_step {
+            width: 100%;
+            &_store {
+                width: 100%;
+            }
+        }
+    }
 }
 
 .restaurants {
-    padding: 50px;
+    padding: 40px;
     background-color: #F6F6F6;
     &_title {
         margin-bottom: 50px;
     }
     &_cards {
         display: flex;
-        justify-content: space-between;
         gap: 20px;
             &_figure {
                 @include shadow;
                 box-sizing: border-box;
                 border-radius: 20px;
                 height: 280px; 
-                width: 48%;
+                width: 100%;
                 background-color: white;
                 transition: 180ms;
                 position: relative;
@@ -109,12 +127,24 @@
                 } 
                     &_img {
                     object-fit: cover;
-                    height: 205px;
+                    height: 210px;
                     width: 100%;
                     border-radius: 20px 20px 0px 0px;  
                     }
+                    &_new {
+                        z-index: 1;
+                        background-color: #99E2D0;
+                        color: #3B8765;
+                        font-weight: 500;
+                        font-size: 14px;
+                        padding: 8px 12px 8px 12px;
+                        border-radius: 3px;
+                        position: absolute;
+                        top: 4%;
+                        right: 10px;
+                    }
                 &_figcaption {
-                    margin: 15px;
+                    margin: 10px 10px 0px 15px;
                     position: relative;
                         &_text h3 {
                             font-size: 16px;
@@ -125,47 +155,43 @@
                         margin-top: 5px;
                         }
                         &_like i{
-                            &.fa-solid.fa-heart {
-                                color: transparent;
-                            }
-                            background-color:transparent;
-                            border: none;
-                            font-size: 24px;
+                            @include like;
                             position: absolute;
                             right: 10px;
                             top: 15%;
-                            transition: 200ms;
                         }
                         &_like i:hover {
-                            color: transparent;
-                            background-image: linear-gradient($color-secondary, $color-primary);
-                            background-clip: text;
-                            -webkit-background-clip: text;
-                            @include transform_scale;
-                        
+                            @include likehover;
                         }
                 }            
             }  
         }
+        @media screen and (max-width:1059px) {
+            &_cards {
+                flex-direction: row;
+                flex-wrap: wrap;
+                &_figure {
+                width: 48%;
+                }
+            }
+        }
+
+        @media screen and (max-width:767px) {
+            &_cards {
+                flex-direction: column;
+                &_figure {
+                    width: 100%;
+                    height: 200px;
+                    &_img {
+                        height: 130px;
+                    }
+                }
+            }
+        }
     }
 
-.new {
-    z-index: 1;
-    background-color: #99E2D0;
-    color: #3B8765;
-    font-weight: 500;
-    font-size: 14px;
-    padding: 8px 12px 8px 12px;
-    border-radius: 3px;
-    position: absolute;
-    top: 4%;
-    right: 10px;
-
-
-}
-
 .footer {
-    padding: 50px;
+    padding: 40px;
     background-color: #353535;
     &_logo {
         font-family: "shrikhand";
@@ -195,5 +221,13 @@
     }
     & a:hover {
         text-decoration: underline;
+    }
+
+    @media screen and (max-width:767px) {
+        &_text {
+            flex-direction: column;
+            gap:10px;
+        }
+
     }
 }

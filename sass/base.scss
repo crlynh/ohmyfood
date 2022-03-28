@@ -69,14 +69,24 @@ $color-tertiary: #99E2D0;
       }
   }
 
-  @mixin new {
-    background-color: #99E2D0;
-    color: #3B8765;
-    font-weight: 500;
-    padding: 10px;
-    border-radius: 2px;
-    position: absolute;
+  @mixin like {
+    &.fa-solid.fa-heart {
+      color: transparent;
+    }
+  background-color:transparent;
+  border: none;
+  font-size: 24px;
+  transition: 200ms;
   }
+
+  @mixin likehover {
+    color: transparent;
+    background-image: linear-gradient($color-secondary, $color-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    @include transform_scale;    
+  }
+
 
   @mixin footer {
     display: flex;
