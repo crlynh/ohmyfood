@@ -17,9 +17,20 @@ $color-primary: #9356DC;
 $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
 
+@mixin header {
+    padding: 25px 0px 10px 0px;
+    position: relative;
+    @include shadow;
+}
+
+@mixin logo {
+  font-family: "shrikhand";
+  text-align: center;
+  font-size: 35px;
+}
 
 @mixin shadow {
-    box-shadow: 0 0 10px #b6b5b5;
+    box-shadow: 0 0 10px #cccbcb;
 }
 
 @mixin button {
@@ -89,6 +100,47 @@ $color-tertiary: #99E2D0;
 
 
   @mixin footer {
+    padding: 40px;
+    background-color: #353535;
+    &_logo {
+        font-family: "shrikhand";
+        color: white;
+        margin-bottom: 20px;
+    }
+    &_text {
+        color: white;
+        display: flex;
+        flex-direction: row;
+        width: 60%;
+        justify-content: space-between;
+        &_bloc1 {
+            @include footerbloc;
+                &_partenaire {
+                    display: flex;
+                    gap: 11px;
+                }
+                &_proposer {
+                    display: flex;
+                    gap: 15px;
+                }
+        }
+        &_bloc2 {
+            @include footerbloc;
+        }
+    }
+    & a:hover {
+        text-decoration: underline;
+    }
+
+    @media screen and (max-width:767px) {
+        &_text {
+            flex-direction: column;
+            gap:10px;
+        }
+    } 
+  }
+  
+  @mixin footerbloc {
     display: flex;
     flex-direction: column;
     gap: 10px;   
