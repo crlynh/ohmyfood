@@ -71,7 +71,7 @@
             margin-bottom: 20px;
             &_border {
                 border-top: 4px solid $color-tertiary;
-                width: 12%;
+                width: 40px;
             }
         }
         &_list {
@@ -88,14 +88,14 @@
             cursor: pointer;
             &_check {
                 background-color: $color-tertiary;
-                width: 25%;
+                width: 22%;
                 border-radius: 0px 15px 15px 0px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 color: white;
                 font-size: 25px;
-                margin-right: -100px;
+                margin-right: -150px;
             }
             &:hover &_check{
                 margin-right: 0;
@@ -148,14 +148,15 @@
 
     @media screen and (max-width:1059px) {
     &_submenu {
-        width: 40%;
+        width: 45%;
         &.dessert {
         margin: auto;
+        width: 60%;
         }
     }
     }
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 599px) {
     position: relative;
     border-radius: 50px 50px 0px 0px;
     margin-top: -70px;
@@ -163,9 +164,15 @@
         justify-content: space-between;
         padding-right: 50px;
         }
+    &_submenus {
+        flex-direction: column;
     }
     &_submenu {
-        width: 80%;
+        width: 100%;
+        &.dessert {
+            width: 100%;
+        }
+    }
     }
     }
 
