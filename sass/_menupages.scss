@@ -1,7 +1,6 @@
 .header {
     position: relative;
     width: 100%;
-    @include header;
         &_text {
             @include logo;
         }
@@ -86,7 +85,7 @@
             animation: appear 1s;
             @for $i from 1 through 4 {
                 &:nth-child(#{$i}) {
-                    animation-delay: 100ms * $i;
+                    animation-delay: 150ms * $i;
                 }
             }
             &_check {
@@ -160,7 +159,7 @@
     }
     }
 
-    @media screen and (max-width: 599px) {
+    @media screen and (max-width: 640px) {
     position: relative;
     border-radius: 45px 45px 0px 0px;
     margin-top: -70px;

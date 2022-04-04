@@ -1,0 +1,184 @@
+
+/* ------------------- HEADER ------------------- */
+@mixin header {
+    padding: 25px 0px 10px 0px;
+    position: relative;
+    @include shadow;
+}
+
+/* ------------------- LOGO ------------------- */
+@mixin logo {
+  font-family: "shrikhand";
+  text-align: center;
+  font-size: 35px;
+}
+
+/* ------------------- SHADOW ------------------- */
+@mixin shadow {
+  box-shadow: 0 0 10px #cccbcb;
+}
+
+/* ------------------- BOUTON DÉGRADÉ ------------------- */
+@mixin button {
+  border: 0;
+  font-weight: 500;
+  font-size: 16px;
+  border-radius: 100px;
+  padding: 15px;
+  color: white;
+  background-color: #b6b5b5;
+  background-image: linear-gradient($color-secondary, $color-primary);
+  cursor: pointer;
+  transition-duration: 0.25s;
+  @include shadow;
+
+  &:hover {
+    box-shadow: 0rem 0rem 10px #494949;
+  }
+}
+
+/* ------------------- ZOOM AU SURVOL ------------------- */
+@mixin transform_scale {
+    cursor: pointer;
+    transform: scale(1.08);
+  }
+
+/* ------------------- BOUTTON LIKE ------------------- */
+  @mixin like {
+    &.fa-solid.fa-heart {
+      color: transparent;
+    }
+  background-color:transparent;
+  border: none;
+  font-size: 24px;
+  transition: 200ms;
+  }
+
+  @mixin likehover {
+    color: transparent;
+    background-image: linear-gradient($color-secondary, $color-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    @include transform_scale;    
+  }
+
+/* ------------------- SHADOW ------------------- */
+@mixin shadow {
+    box-shadow: 0 0 10px #cccbcb;
+  }
+  
+  @mixin button {
+    border: 0;
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 100px;
+    padding: 15px;
+    color: white;
+    background-color: #b6b5b5;
+    background-image: linear-gradient($color-secondary, $color-primary);
+    cursor: pointer;
+    transition-duration: 0.25s;
+    @include shadow;
+  
+    &:hover {
+      box-shadow: 0rem 0rem 10px #494949;
+    }
+  }
+  
+  /* ------------------- ZOOM AU SURVOL ------------------- */
+  @mixin transform_scale {
+      cursor: pointer;
+      transform: scale(1.08);
+    }
+  
+  /* ------------------- BOUTTON LIKE ------------------- */
+    @mixin like {
+      &.fa-solid.fa-heart {
+        color: transparent;
+      }
+    background-color:transparent;
+    border: none;
+    font-size: 24px;
+    transition: 200ms;
+    }
+  
+    @mixin likehover {
+      color: transparent;
+      background-image: linear-gradient($color-secondary, $color-primary);
+      background-clip: text;
+      -webkit-background-clip: text;
+      @include transform_scale;    
+    }
+
+ /* ------------------- FONCTIONNEMENT ------------------- */
+  @mixin step {
+    padding: 20px;
+    height: 70px;
+    border-radius: 20px;
+    width: 400px;
+    @include shadow;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+      &::before {
+          content: counter(steps);
+          counter-increment: steps;
+          color: white;
+          background-color: $color-primary;
+          border-radius: 50%;
+          width: 25px;
+          height: 25px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-left: -33px;
+      }
+  }
+
+/* ------------------- FOOTER ------------------- */
+  @mixin footer {
+    padding: 40px;
+    background-color: #353535;
+    &_logo {
+        font-family: "shrikhand";
+        color: white;
+        margin-bottom: 20px;
+    }
+    &_text {
+        color: white;
+        display: flex;
+        flex-direction: row;
+        width: 60%;
+        justify-content: space-between;
+        &_bloc1 {
+            @include footerbloc;
+                &_partenaire {
+                    display: flex;
+                    gap: 11px;
+                }
+                &_proposer {
+                    display: flex;
+                    gap: 15px;
+                }
+        }
+        &_bloc2 {
+            @include footerbloc;
+        }
+    }
+    & a:hover {
+        text-decoration: underline;
+    }
+
+    @media screen and (max-width:767px) {
+        &_text {
+            flex-direction: column;
+            gap:10px;
+        }
+    } 
+  }
+
+  @mixin footerbloc {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;   
+  }

@@ -1,0 +1,56 @@
+/* ------------------- LOADING SPINNER ------------------- */
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}
+
+@keyframes color {
+  0% {
+    stroke: $color-primary;
+  }
+  33% {
+    stroke: $color-secondary;
+  }
+  90% {
+    stroke: $color-tertiary;
+  }
+}
+
+@keyframes disappear {
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+/* ------------------- ANIMATION APPARITION PAGES MENUS ------------------- */
+  @keyframes appear {
+    0% {
+        transform: translateY(50%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
