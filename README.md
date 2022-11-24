@@ -1,4 +1,4 @@
-# PROJET 2 - OHMYFOOD
+# PROJET 3 - OHMYFOOD
 
 ## Objectif du projet : Dynamisez une page web avec des animations CSS
 
